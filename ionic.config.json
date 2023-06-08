@@ -1,0 +1,7 @@
+{
+  "name": "RizzIonic1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
