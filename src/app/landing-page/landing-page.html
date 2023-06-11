@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img src="../.././../assets/rizzlogo.png" class="logo"></ion-img>
+      Rizz Rooms
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  
+  <ion-content>
+    <div id="booking" class="section">
+      <div class="section-center">
+        <div class="container">
+          <ion-card>
+            <ion-card-content class="booking-form">
+              <form>
+                <div class="row no-margin align-items-center">
+                  <div class="col-md-3">
+                    <ion-item>
+                      <ion-label position="stacked" class="form-label">Destino</ion-label>
+                      <ion-select [(ngModel)]="destination" name="destination">
+                        <ion-select-option *ngFor="let destination of destinations" [value]="destination.region_id">
+                          {{ destination.name }}
+                        </ion-select-option>
+                      </ion-select>
+                    </ion-item>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row no-margin">
+                      <div class="col-md-5">
+                        <ion-item>
+                          <ion-label position="stacked" class="form-label">Check-In</ion-label>
+                          <ion-input type="date" [(ngModel)]="checkinDate" name="checkinDate" required></ion-input>
+                        </ion-item>
+                      </div>
+                      <div class="col-md-5">
+                        <ion-item>
+                          <ion-label position="stacked" class="form-label">Check-Out</ion-label>
+                          <ion-input type="date" [(ngModel)]="checkoutDate" name="checkoutDate" required></ion-input>
+                        </ion-item>
+                      </div>
+                      <div class="col-md-2">
+                        <ion-item>
+                          <ion-label position="stacked" class="form-label">Adultos</ion-label>
+                          <ion-select [(ngModel)]="adultsNumber" name="adultsNumber">
+                            <ion-select-option>1</ion-select-option>
+                            <ion-select-option>2</ion-select-option>
+                            <ion-select-option>3</ion-select-option>
+                            <ion-select-option>4</ion-select-option>
+                            <ion-select-option>5</ion-select-option>
+                            <ion-select-option>6</ion-select-option>
+                            <ion-select-option>7</ion-select-option>
+                            <ion-select-option>8</ion-select-option>
+                            <ion-select-option>9</ion-select-option>
+                            <ion-select-option>10</ion-select-option>
+                          </ion-select>
+                        </ion-item>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-btn">
+                      <ion-button (click)="onSearch()" expand="full" class="submit-btn">
+                        Procurar
+                      </ion-button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  

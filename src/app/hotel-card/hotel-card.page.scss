@@ -1,0 +1,81 @@
+/* CSS for Hotel Details Page */
+
+/* Styling for the hotel image */
+.hotel-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Styling for the star rating */
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating ion-icon {
+  color: #fdd835;
+}
+
+/* Styling for the review score */
+.review-score {
+  color: #888;
+}
+
+/* Styling for the price */
+.price {
+  font-weight: bold;
+}
+
+/* Styling for the hotel name */
+.hotel-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styling for the address */
+.address ion-icon {
+  color: #888;
+  margin-right: 5px;
+}
+
+/* Styling for the zipcode */
+.zipcode ion-icon {
+  color: #888;
+  margin-right: 5px;
+}
+
+/* Styling for the booking link */
+.booking-link a {
+  color: #007bff;
+}
+
+/* Styling for the facilities heading */
+.facilities-heading {
+  font-weight: bold;
+}
+
+/* Styling for the facility list */
+.facility-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Styling for the facility icon */
+.facility-icon {
+  color: #4caf50;
+  margin-right: 5px;
+}
+
+/* Styling for the no facilities text */
+.no-facilities {
+  color: #888;
+}
+
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 600px) {
+  .hotel-image {
+    width: 100%;
+    height: 300px;
+  }
+}

@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Detalhes do Quarto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid *ngIf="hotelDetails && hotelOtherDetails">
+    <ion-row>
+      <ion-col>
+        <div class="hotel-image">
+          <img [src]="hotelImage" alt="hotel image">
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h3 class="rating">
+          <ion-icon name="star" *ngFor="let item of [].constructor(hotelOtherDetails.class)"></ion-icon>
+        </h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list class="mt-3">
+          <ion-item>
+            <ion-label class="label-wrap">Nome:</ion-label>
+            <ion-text class="text-wrap">{{ hotelDetails.name }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-wrap">Endereço:</ion-label>
+            <ion-text class="text-wrap">{{ hotelDetails.address }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-wrap">Código Postal:</ion-label>
+            <ion-text class="text-wrap">{{ hotelDetails.zip }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-wrap">Cidade:</ion-label>
+            <ion-text class="text-wrap">{{ hotelDetails.city }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-wrap">Avaliação:</ion-label>
+            <ion-text class="text-wrap">{{ hotelOtherDetails.review_score }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-wrap">Avaliação Textual:</ion-label>
+            <ion-text class="text-wrap">{{ getTextualRating(hotelOtherDetails.class) }}</ion-text>
+          </ion-item>
+          <ion-item>
+            <ion-label class="label-wrap">Listagem no Booking:</ion-label>
+            <ion-text class="text-wrap">
+              <a [href]="hotelDetails.url" target="_blank">Clique Aqui</a>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+        <div class="mt-3">Instalações:</div>
+        <div class="facilities__block mt-2">
+          <ion-list *ngIf="hotelDetails.facilities_block && hotelDetails.facilities_block.facilities.length > 0">
+            <ion-item *ngFor="let facility of hotelDetails.facilities_block.facilities">
+              <ion-icon name="checkmark" class="facility-icon"></ion-icon>
+              <ion-label class="label-wrap">{{ facility.name }}</ion-label>
+            </ion-item>
+          </ion-list>
+          <p class="no-facilities" *ngIf="!hotelDetails.facilities_block || hotelDetails.facilities_block.facilities.length === 0">
+            Não existem comodidades.
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Avaliaçoes -->
+    <div class="mt-3">Avaliações:</div>
+    <div class="reviews-block mt-2">
+      <ion-list *ngIf="hotelReviews && hotelReviews.length > 0">
+        <ion-item *ngFor="let review of hotelReviews">
+          <ion-label class="label-wrap">{{ review.title }}</ion-label>
+          <p class="text-wrap">{{ review.content }}</p>
+          <p class="user-name"><strong>{{ review.user }}</strong></p>
+        </ion-item>
+      </ion-list>
+      <p class="no-reviews" *ngIf="!hotelReviews || hotelReviews.length === 0">
+        Não existem avaliações disponíveis.
+      </p>
+    </div>
+  </ion-grid>
+</ion-content>

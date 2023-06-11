@@ -1,0 +1,68 @@
+.hotel-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hotel-count {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.ion-card {
+  max-width: 300px;
+  margin: 10px;
+}
+
+.hotel-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.hotel-details {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.hotel-details h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.hotel-details h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.address-info {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.hotel-details h4,
+.hotel-details h5 {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.hotel-description {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.hotel-photo {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.hotel-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.details-btn {
+  margin-top: 10px;
+}
