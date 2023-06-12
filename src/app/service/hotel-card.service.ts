@@ -6,19 +6,20 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class hotelApiService {
   private headers = new HttpHeaders({
-    'X-RapidAPI-Key': '7048f4efa8mshe49fa77e07f556cp16fb4fjsn6907d2b2c17d',
+    'X-RapidAPI-Key': 'e761e5ace1msh02038ca94aa3b61p1656fdjsn5a62347f3376',
     'X-RapidAPI-Host': 'booking-com.p.rapidapi.com',
   });
 
   constructor(private http: HttpClient) {}
-  
+
+  // Buscar detalhes do hotel com base no ID do hotel
   fetchHotelDetails(hotel_id: string) {
     const params = {
       hotel_id: hotel_id,
       currency: 'EUR',
       locale: 'pt-pt',
-      checkout_date: '2023-09-28',
-      checkin_date: '2023-09-27'
+      checkout_date: '',
+      checkin_date: ''
     }
     return this.http.get(
       `https://booking-com.p.rapidapi.com/v2/hotels/details`,
@@ -26,6 +27,7 @@ export class hotelApiService {
     );
   }
 
+  // Buscar fotos do hotel com base no ID do hotel
   fetchHotelPhotos(hotel_id: string) {
     const params = {
       hotel_id: hotel_id,
@@ -38,9 +40,8 @@ export class hotelApiService {
     );
   }
 
-  //Receber data que contem  review por estrelas 
+  // Buscar outros dados relacionados ao hotel com base no ID do hotel
   fetchOtherData(hotel_id: string){
-   
     const params = {
       sort_type: 'SORT_MOST_RELEVANT',
       hotel_id: hotel_id,

@@ -1,0 +1,52 @@
+/* Hotel Card */
+.hotel-card {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hotel Name */
+.hotel-name {
+  font-weight: bold;
+}
+
+/* Hotel City */
+.hotel-city {
+  font-size: 14px;
+  color: #888;
+}
+
+/* Hotel Address */
+.hotel-address {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Hotel Rooms */
+.hotel-rooms {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Details Button */
+.details-btn {
+  --background: #007bff;
+  --color: #fff;
+  --border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Card Image */
+ion-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Padding for ion-content */
+ion-content {
+  --padding-bottom: 10px;
+}

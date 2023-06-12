@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Hoteis Disponíveis
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <p class="card2">Existem {{ hotels.length }} Hóteis disponíveis.</p>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" *ngFor="let hotel of hotels">
+          <ion-card class="hotel-card">
+            <img [src]="fake_hotel_image" alt="hotel image">
+            <ion-card-header>
+              <ion-card-title class="hotel-name">{{ hotel.name | uppercase }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <div class="hotel-details">
+                <p class="hotel-address">{{ getHotelAddress(hotel) }}, {{ hotel.zip | uppercase }}</p>
+                <div class="hotel-stars">
+                  <ng-container *ngFor="let star of getStars(hotel.rating)">
+                    <ion-icon name="star"></ion-icon>
+                  </ng-container>
+                </div>
+                <p class="hotel-rooms">{{ 'Quartos Disponíveis: ' + hotel.number_of_rooms }}</p>
+              </div>
+              <ion-button class="details-btn" (click)="viewDetail(hotel.hotel_id)">Detalhes</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <!-- Add your footer content here -->
+  </ion-toolbar>
+</ion-footer>

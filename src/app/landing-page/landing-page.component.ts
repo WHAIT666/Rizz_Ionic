@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LandingPageService } from './landing-page.service';
+import { LandingPageService } from '../service/landing-page.service'
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -20,8 +20,8 @@ export class LandingPageComponent implements OnInit {
   showBookingPage: boolean = false;
 
   constructor(
-    private landingPageService: LandingPageService, // Serviço para obter dados da pagina de destino
-    private router: Router, // Serviço de routing
+    private landingPageService: LandingPageService, // Serviço para obter dados da página de destino
+    private router: Router, // Serviço de roteamento
     private alertController: AlertController // Controller para mostrar as mensagens de alerta
   ) {}
 
@@ -50,6 +50,7 @@ export class LandingPageComponent implements OnInit {
         console.log(response.result);
         this.hotels = response.result;
 
+        // Filtrar hotéis pelo destino selecionado
         const filteredHotels = this.hotels.filter((hotel) => hotel.city === this.destination);
 
         if (filteredHotels.length > 0) {
@@ -74,6 +75,7 @@ export class LandingPageComponent implements OnInit {
           return;
         }
 
+        // Construir os parâmetros da query para a rota '/hotel-list'
         const queryParams = {
           destination: this.destination,
           checkinDate: checkin.toISOString(),
@@ -82,7 +84,8 @@ export class LandingPageComponent implements OnInit {
           hotels: JSON.stringify(this.hotels),
         };
 
-        this.router.navigate(['/bookingapi'], { queryParams: queryParams });
+        // Navegar para a rota '/hotel-list' com os parâmetros da query
+        this.router.navigate(['/hotel-list'], { queryParams: queryParams });
       },
       (error: any) => {
         console.log(error);

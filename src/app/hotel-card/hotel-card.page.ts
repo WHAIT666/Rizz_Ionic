@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { hotelApiService } from './hotel-card.service';
+import { hotelApiService } from '../service/hotel-card.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
