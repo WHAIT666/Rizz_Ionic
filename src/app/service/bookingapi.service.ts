@@ -6,7 +6,11 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class BookingapiService {
   private headers = new HttpHeaders({
+<<<<<<< HEAD
     'X-RapidAPI-Key': '5b94a6310amsh271e8533bde539cp147d31jsn8e2a2935572c',
+=======
+    'X-RapidAPI-Key': 'e761e5ace1msh02038ca94aa3b61p1656fdjsn5a62347f3376',
+>>>>>>> 47be99c7ca5edc5b37faea354f628d776e91f8ed
     'X-RapidAPI-Host': 'booking-com.p.rapidapi.com',
   });
 
