@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BookingapiService } from './bookingapi.service';
+import { BookingapiService } from '../service/bookingapi.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -9,6 +9,7 @@ interface HotelData {
   address: string;
   adult_age_restrictions: {
     min_age: number;
+    
   };
   book_domestic_without_cc_details: boolean;
   chain_id: number;
@@ -49,6 +50,7 @@ interface HotelData {
   theme_ids: string;
   url: string;
   zip: string;
+  rating: number;
 }
 
 @Component({
@@ -156,5 +158,7 @@ export class BookingapiComponent implements OnInit {
     this.router.navigate([`/hotel-card/${hotelId}`]);
   }
 
+  getStars(stars: number): string {
+    return '⭐️'.repeat(stars);}
   
 }

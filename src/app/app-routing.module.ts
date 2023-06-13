@@ -14,20 +14,12 @@ const routes: Routes = [
   },
 
   {
-    path: 'footer',
-    loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
-  },
-  {
-    path: 'navbar',
-    loadChildren: () => import('./navbar/navbar.module').then( m => m.NavbarPageModule)
-  },
-  {
     path: 'hotel-card/:id',
     loadChildren: () => import('./hotel-card/hotel-card.module').then( m => m.HotelCardPageModule)
   },
   {
-    path: 'bookingapi',
-    loadChildren: () => import('./bookingapi/bookingapi.module').then( m => m.BookingapiPageModule)
+    path: 'hotel-list',
+    loadChildren: () => import('./hotel-list/bookingapi.module').then( m => m.BookingapiPageModule)
   },
 ];
 

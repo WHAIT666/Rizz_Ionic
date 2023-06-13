@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/bookingapi"></ion-back-button>
+    </ion-buttons>
     <ion-title>
       Detalhes do Quarto
     </ion-title>
@@ -88,3 +91,11 @@
     </div>
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/landing-page" color="primary">Voltar à página inicial</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

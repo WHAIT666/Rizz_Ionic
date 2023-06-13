@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class hotelApiService {
   private headers = new HttpHeaders({
-    'X-RapidAPI-Key': '7048f4efa8mshe49fa77e07f556cp16fb4fjsn6907d2b2c17d',
+    'X-RapidAPI-Key': '5b94a6310amsh271e8533bde539cp147d31jsn8e2a2935572c',
     'X-RapidAPI-Host': 'booking-com.p.rapidapi.com',
   });
 

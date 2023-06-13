@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { HotelCardPageRoutingModule } from './hotel-card-routing.module';
 import { HotelCardComponent } from './hotel-card.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -13,5 +14,6 @@ import { HotelCardComponent } from './hotel-card.page';
     HotelCardPageRoutingModule
   ],
   declarations: [HotelCardComponent],
+  
 })
-export class HotelCardPageModule { }
+export class HotelCardPageModule {}

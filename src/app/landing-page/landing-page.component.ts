@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LandingPageService } from './landing-page.service';
+import { LandingPageService } from '../service/landing-page.service'
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -82,7 +82,7 @@ export class LandingPageComponent implements OnInit {
           hotels: JSON.stringify(this.hotels),
         };
 
-        this.router.navigate(['/bookingapi'], { queryParams: queryParams });
+        this.router.navigate(['/hotel-list'], { queryParams: queryParams });
       },
       (error: any) => {
         console.log(error);
